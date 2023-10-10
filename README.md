@@ -35,5 +35,5 @@ sudo wget -O Forwarder_AMA_installer.py https://raw.githubusercontent.com/Azure/
 
 below is a draft of how it could be:
 
-
+<img width="769" alt="image" src="https://github.com/rudneir2/productfeedback-sentinel-dataconnector-cef-brokenlink/assets/97529152/c5559c6a-8874-429b-8362-84152035170b">
 
