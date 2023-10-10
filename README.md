@@ -12,6 +12,7 @@ To collect CEF logs from Security appliances that generate logs in CEF format, t
 
 The issue/feedback below is regarding step 5 above.
 
+
 ## the issue
 
 When you add CEF data connector via AMA, go to Connector page, you will find a command to run on linux CEF collector.
@@ -29,11 +30,15 @@ if we break down the command, we have two commands in the same line:
 
 **The issue:** if you have python3 installed on your Linux box, the command above will not work properly and you won't have rsyslog daemon configured!!
 
-**Feedback:** as a suggestion, PG can provide a simple WARNING statement below the command, in the Sentinel page, explaining that if you use python3, the line command should be like this:
+**Feedback:** as a suggestion, PG can provide a simple WARNING statement below the command, in the Sentinel page, explaining that if you use python3, the line command should be like this (see the highlighted part of command):
 
 sudo wget -O Forwarder_AMA_installer.py https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/DataConnectors/Syslog/Forwarder_AMA_installer.py&&sudo **python3** Forwarder_AMA_installer.py
 
 below is a draft of how it could be:
 
 <img width="769" alt="image" src="https://github.com/rudneir2/productfeedback-sentinel-dataconnector-cef-brokenlink/assets/97529152/c5559c6a-8874-429b-8362-84152035170b">
+
+## why the feedback/resolution is important?
+
+many customers that run the command per Sentinel instruction don't observe the detail and the command run executing **only** the first command **wget**, and bring a very discrete error on Linux screen log.
 
